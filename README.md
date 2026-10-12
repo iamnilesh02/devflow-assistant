@@ -74,33 +74,34 @@ devflow-assistant/
         └── App.tsx            # Simulated agent controls & live protocol inspector
 
 
-## Quickstart & Local Setup
-# Prerequisites
+Quickstart & Local Setup
+Prerequisites
+
 1) Node.js v20+ or v24+
 
 2) npm v10+
 
-## 1. Clone & Install
+1. Clone & Install
 
 git clone [https://github.com/iamnilesh02/devflow-assistant.git](https://github.com/iamnilesh02/devflow-assistant.git)
 cd devflow-assistant
 npm install
 
-## 2. Configure Environment (Optional)
+2. Configure Environment (Optional)
 
 The system operates cleanly against public repositories out-of-the-box without authentication. To query private enterprise repositories or increase rate limits, create a .env file:
 
 PORT=3000
 GITHUB_TOKEN=your_github_personal_access_token_here
 
-## 3. Start the MCP Server
+3. Start the MCP Server
 
 Launch the backend server with live file watching on port 3000:
 
 npm run dev
 
 
-## 4. Start the Alexa+ Simulator
+4. Start the Alexa+ Simulator
 
 Verify protocol compliance using raw HTTP JSON-RPC 2.0 calls:
 
@@ -117,6 +118,7 @@ curl -X POST http://localhost:3000/mcp \
   -d '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"list_pull_requests","arguments":{"owner":"facebook","repo":"react"}}}'
 
 Product Feedback on Tools & SDKs Used
+
 1. Alexa+ Streamable HTTP MCP Specification (2025-11-25)
 
 a) What we used it for: Creating self-hosted agent tool endpoints (tools/list and tools/call) enabling discovery and execution.
@@ -142,9 +144,8 @@ d) Onboarding experience: Familiar and well-documented.
 e) Would we build with it again? Yes.
 
 
-## Friction Log
-
-## Streamable HTTP Transport Reverse Proxy Buffering
+Friction Log
+1.Streamable HTTP Transport Reverse Proxy Buffering
 
 a) Task Attempted: Implementing self-hosted MCP endpoints utilizing Streamable HTTP transport for tool discovery and execution.
 
@@ -159,7 +160,7 @@ e) Workaround Used: Standardized on deterministic JSON-RPC 2.0 response envelope
 f) Actionable Suggestion: Release an official lightweight TypeScript helper package with pre-configured Express/Fastify streaming middleware for the Streamable HTTP specification.
 
 
-## Native Module Compilation Hurdles on Windows
+2.Native Module Compilation Hurdles on Windows
 
 a) Task Attempted: Setting up local vector retrieval libraries with pre-compiled C++ bindings.
 
@@ -173,6 +174,6 @@ e) Workaround Used: Built a zero-dependency, pure TypeScript vector space and co
 
 f) Actionable Suggestion: Developer toolchains and starter kits should prioritize pure JavaScript or WebAssembly runtimes to prevent environment-specific onboarding blockers.
 
-## License
+License
 
 This project is open-source and available under the terms of the MIT License.
