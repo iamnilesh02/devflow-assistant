@@ -1,4 +1,3 @@
-@'
 # DevFlow Assistant
 
 DevFlow Assistant is an autonomous DevOps intelligence agent designed for the Amazon Alexa+ ecosystem. It provides a self-hosted Model Context Protocol (MCP) server running over Streamable HTTP (spec 2025-11-25) to triage broken CI/CD pipelines, inspect GitHub Actions failures, and query repository pull requests through natural agent interactions.
